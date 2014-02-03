@@ -10,17 +10,20 @@
     </ul>
   </div>
   <% end %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
- 
-  <p>
-    <%= f.submit %>
-  </p>
+
+  <div class="row collapse">
+    <div class="small-3 columns">
+       <%= f.label :title, class: "right inline" %>
+      </div>
+       <div class="small-9 columns"><%= f.text_field :title %></div>
+  </div>
+  <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :text, class: "right inline" %>
+      </div>
+        <div class="small-9 columns"><%= f.text_field :text %></div>
+      </div>
+  <div class="row collapse">
+        <div class="small-9 small-offset-3 columns"><%= f.submit %></div>
+  </div>
 <% end %>

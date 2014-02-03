@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="row collapse">
-    <div class="small-3 columns">
+    <div class="small-1 columns">
        <%= f.label :title, class: "right inline" %>
       </div>
-       <div class="small-9 columns"><%= f.text_field :title %></div>
+       <div class="small-11 columns"><%= f.text_field :title %></div>
   </div>
   <div class="row collapse">
-      <div class="small-3 columns">
+      <div class="small-1 columns">
         <%= f.label :text, class: "right inline" %>
       </div>
-        <div class="small-9 columns"><%= f.text_field :text %></div>
+        <div class="small-11 columns"><%= f.text_field :text %></div>
       </div>
   <div class="row collapse">
-        <div class="small-9 small-offset-3 columns"><%= f.submit %></div>
+        <div class="small-11 small-offset-1 columns"><%= f.submit class: "button" %></div>
   </div>
 <% end %>

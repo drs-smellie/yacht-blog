@@ -1,23 +1,18 @@
 <h1>All posts</h1>
 
-
-<table>
-	<tr>
-		<th>Title</th>
-		<th>Text</th>
-		<th></th>
-		<th></th>
-	</tr>
-
+<div class="media-body" >
   <% @posts.each do |post| %>
-	<tr>
-		<td><%= post.title %></td>
-		<td><%= post.text %></td>
-		<td><%= link_to 'Show', post %></td>
-		<td><%= link_to 'Edit', edit_post_path(post) %></td>
-		<td><%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-	</tr>
+  	<h4 class="media-heading">
+	<%= link_to post.title, post %></h4>
+	<%= post.text %><br />
+	<small>
+	Posted <%= time_ago_in_words(post.created_at) %> ago
+	<%= link_to 'Edit', edit_post_path(post) %> |
+	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br />
+	<%= post.comments.count %> Comments
+	</small>
   <% end %>
-</table>
-<br>
-<%= link_to 'Home', root_path %>
+</div>
+
+<br />
+<%= link_to 'Home', root_path, class: "button" %>

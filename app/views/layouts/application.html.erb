@@ -35,13 +35,19 @@
           <li class="divider"></li>
           <li><%= link_to "Best yachts", posts_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Best airplanes", posts_path %></li>
+          <% if current_user %>
+          <li><%= link_to (current_user.username || current_user.email), posts_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "SYB shop", posts_path %></li>
+          <li><%= link_to "Log out", log_out_path %></li>
+          <% else %>
+          <li><%= link_to "Sign up", sign_up_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Log in", log_in_path %></li>
+          <% end %>
         </ul>
       </div>
     </nav>
-
+    <%= render 'layouts/messages' %>
     <div class="row">
       <div class="large-9 columns"><%= yield %></div>
       <div class="large-3 columns"></div>

@@ -1,5 +1,20 @@
 <h1>Steven's yacht blog</h1>
-
-  <%= link_to "All posts", posts_path, class: "button" %>
-  <br>
-  <%= link_to "New post", new_post_path, class: "button" %>
+<br />
+<h3>Latest posts:</h3>
+<div class="media-body" >
+  <% @posts.order('created_at DESC').limit(4).each do |post| %>
+  	<h4 class="media-heading">
+	<%= link_to post.title, post %></h4>
+	<%= truncate post.text, length: 190 %> <%= link_to 'read more', post %><br />
+	<small>
+	Posted <%= time_ago_in_words(post.created_at) %> ago
+	<%= link_to 'Edit', edit_post_path(post) %> |
+	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br />
+	<%= post.comments.count %> Comments
+	</small>
+	<p>
+  <% end %>
+</div> 
+<br />
+<br />
+<%= link_to "New post", new_post_path, class: "button" %>

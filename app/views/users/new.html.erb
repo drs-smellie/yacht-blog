@@ -1,4 +1,6 @@
 <h1>Sign up</h1>
+As a member of this blog, you will be able to add comments to posts. Moderators and Admins will be able to remove your comments if they see fit.
+<p>
 <%= form_for(@user, :html => { :class => 'form-horizontal' }) do |f| %>
   <% if @user.errors.any? %>
     <div class="error_messages">

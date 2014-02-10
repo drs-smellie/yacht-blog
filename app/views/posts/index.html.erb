@@ -1,4 +1,7 @@
 <h1>All posts</h1>
+<% if can? :create, Post %>
+  <%= link_to "New Post", new_post_path %>
+<% end %>
 
 <div class="media-body" >
   <% @posts.order('created_at DESC').each do |post| %>

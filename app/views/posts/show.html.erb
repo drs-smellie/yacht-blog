@@ -10,7 +10,9 @@
 <p>
 <h4>Add a comment as <%= current_user.username %></h4>
 <%= render "comments/form" %>
- 
-<%= link_to 'Edit Post', edit_post_path(@post) %> |
+
+<% if can? :edit, @post %> 
+<%= link_to 'Edit Post', edit_post_path(@post) %>
+<% end %>
 <%= link_to 'Back to Posts', posts_path %>
 <p>

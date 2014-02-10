@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		@post = current_user.posts.build(post_params)
 		if @post.save
 			redirect_to @post, notice: "Post was created successfully!"
 		else
@@ -34,6 +34,8 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		@comments = @post.comments
+		@comment = Comment.new
 	end
 
 	def destroy

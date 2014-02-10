@@ -1,11 +1,4 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
-	<div class="row collapse">
-    	<div class="small-1 columns">
-		<%= f.label :name, class: "right inline" %>
-		</div>
- 		<div class="small-11 columns"><%= f.text_field :commenter %>
- 		</div>
- 	</div>
+<%= form_for ([@post, @post.comments.build]) do |f| %>
 	<div class="row collapse">
     	<div class="small-1 columns"><%= f.label :comment, class: "right inline" %>
 		</div>

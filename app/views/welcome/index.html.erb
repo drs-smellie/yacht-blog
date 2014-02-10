@@ -7,7 +7,7 @@
 	<%= link_to post.title, post %></h4>
 	<%= truncate post.text, length: 190 %> <%= link_to 'read more', post %><br />
 	<small>
-	Posted <%= time_ago_in_words(post.created_at) %> ago
+	Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %>
 	<%= link_to 'Edit', edit_post_path(post) %> |
 	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br />
 	<%= post.comments.count %> Comments

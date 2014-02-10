@@ -1,5 +1,7 @@
 <h1>Steven's yacht blog</h1>
-<br />
+<% if can? :create, @post %>
+	<%= link_to "Admin: Create new post", new_post_path %>
+<% end %> 
 <h3>Latest posts:</h3>
 <div class="media-body" >
   <% @posts.order('created_at DESC').limit(4).each do |post| %>
@@ -8,8 +10,10 @@
 	<%= truncate post.text, length: 190 %> <%= link_to 'read more', post %><br />
 	<small>
 	Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %>
-	<%= link_to 'Edit', edit_post_path(post) %> |
-	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br />
+	<% if can? :edit, @post %>
+	<%= link_to 'Edit', edit_post_path(post) %><% end %> |
+	<% if can? :destroy, @post %>
+	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br /><% end %>
 	<%= post.comments.count %> Comments
 	</small>
 	<p>
@@ -17,4 +21,3 @@
 </div> 
 <br />
 <br />
-<%= link_to "New post", new_post_path, class: "button" %>

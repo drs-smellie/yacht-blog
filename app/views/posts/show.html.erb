@@ -8,11 +8,13 @@
 <h4>There are currently <%= @post.comments.count %> comments</h4>
 <%= render @post.comments %>
 <p>
+<% if can? :create, Comment %>
 <h4>Add a comment as <%= current_user.username %></h4>
 <%= render "comments/form" %>
+<% end %>
 
 <% if can? :edit, @post %> 
 <%= link_to 'Edit Post', edit_post_path(@post) %>
 <% end %>
-<%= link_to 'Back to Posts', posts_path %>
+<%= link_to 'Back to all posts', posts_path %>
 <p>

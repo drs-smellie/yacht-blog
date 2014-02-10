@@ -1,8 +1,11 @@
-<h1><%= @post.title %></h1>
+<h2><%= @post.title %></h2>
+<small>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %></small><br />
+<p>
+<p>
 <%= @post.text %>
  
 <p>
-<h3>Comments</h3>
+<h4>There are currently <%= @post.comments.count %> comments</h4>
 <%= render @post.comments %>
 <p>
 <h4>Add a comment as <%= current_user.username %></h4>

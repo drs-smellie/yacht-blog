@@ -15,18 +15,15 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   	<title><%= content_for?(:title) ? yield(:title) : "Steven's yacht blog" %></title>
-
-  	<%= stylesheet_link_tag    "application" %>
-  	<%= javascript_include_tag "vendor/custom.modernizr" %>
+    <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <nav class="top-bar">
       <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Steven's Yacht Blog Home", root_path %></a></h1>
-        </li>
+        <li class="name"><h1><%= link_to "Steven's Yacht Blog Home", root_path %></h1></li>
+        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
       </ul>
       <section class="top-bar-section">
         <ul class="right"
@@ -54,8 +51,7 @@
         <h3 class="subheader">About this blog</h3>
         Steven's aviation & maritime blog is brought to you by the following sponsor: Moët & Chandon Champagne
     </div>
-
-    
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

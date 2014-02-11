@@ -4,7 +4,7 @@
 
 // The default font-size is set to 100% of the browser style sheet (usually 16px)
 // for compatibility with browser-based text zoom or user-set defaults.
-$base-font-size: 100% !default;
+// $base-font-size: 100% !default;
 
 // $base-line-height is 24px while $base-font-size is 16px
 // $base-line-height: 150%;
@@ -61,7 +61,7 @@ $em-base: 16px !default;
 
 // Various global styles
 
-$default-float: left;
+// $default-float: left;
 
 // $body-bg: #fff;
 // $body-font-color: #222;
@@ -384,7 +384,7 @@ $header-font-weight: normal;
 
 // We use these to control button border styles.
 
-$button-border-width: 0px;
+// $button-border-width: 0px;
 // $button-border-style: solid;
 
 // We use this to set the default radius used throughout the core.
@@ -1255,7 +1255,7 @@ $button-border-width: 0px;
 
 // Background color for the top bar
 
-$topbar-bg-color: #333333;
+// $topbar-bg-color: #333333;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1276,7 +1276,7 @@ $topbar-title-weight: normal;
 
 // $topbar-dropdown-bg: #222;
 // $topbar-dropdown-link-color: #fff;
-$topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
+// $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
@@ -1303,10 +1303,11 @@ $topbar-link-hover-lightness: -30%; // Darken by 15%
 // $topbar-menu-link-transform: uppercase;
 // $topbar-menu-link-font-size: em-calc(13);
 // $topbar-menu-link-weight: bold;
-// $topbar-menu-link-color: #fff;
-// $topbar-menu-icon-color: #fff;
-// $topbar-menu-link-color-toggled: #888;
-// $topbar-menu-icon-color-toggled: #888;
+$topbar-menu-link-color: #ffffff;
+$topbar-menu-icon-color: #ffffff;
+
+$topbar-menu-link-color-toggled: #fff;
+$topbar-menu-icon-color-toggled: #ffffff;
 
 // Transitions and breakpoint styles
 
@@ -1317,11 +1318,11 @@ $topbar-link-hover-lightness: -30%; // Darken by 15%
 // Divider Styles
 
 // $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-//  $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
+// $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
 
 // Sticky Class
 
 // $topbar-sticky-class: ".sticky";
-$topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 @import 'foundation';

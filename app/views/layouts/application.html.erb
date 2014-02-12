@@ -14,23 +14,26 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<title><%= content_for?(:title) ? yield(:title) : "Steven's yacht blog" %></title>
+  	<title><%= content_for?(:title) ? yield(:title) : "The Yacht & Aviation Daily" %></title>
     <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <nav class="top-bar">
+    <nav class="top-bar" data-topbar>
       <ul class="title-area">
-        <li class="name"><h1><%= link_to "Steven's Yacht Blog Home", root_path %></h1></li>
-        <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        <li class="name">
+          <h1><%= link_to "Yacht & Aviation", root_path %></h1>
+        </li>
+        <li class="toggle-topbar menu-icon"><%= link_to "Menu" %></li>
       </ul>
       <section class="top-bar-section">
         <ul class="right"
           <li class="divider"></li>
+          <li class="divider"></li>
           <li><%= link_to "All Posts", posts_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "Best yachts", posts_path %></li>
+          <li><%= link_to "About this blog", posts_path %></li>
           <li class="divider"></li>
           <% if current_user %>
           <li><%= link_to (current_user.username || current_user.email), posts_path %></li>
@@ -49,7 +52,7 @@
       <div class="large-9 columns"><%= yield %></div>
       <div class="large-3 columns"></div>
         <h3 class="subheader">About this blog</h3>
-        Steven's aviation & maritime blog is brought to you by the following sponsor: Moët & Chandon Champagne
+        The Yacht & Aviation Daily is brought to you by the following sponsor: Moët & Chandon Champagne
     </div>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>

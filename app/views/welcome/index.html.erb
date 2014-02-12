@@ -3,7 +3,7 @@
   </div>
 	<h3>Latest posts:</h3>
 	<div class="media-body" >
-  <% @posts.order('created_at DESC').limit(4).each do |post| %>
+    <% @posts.order('created_at DESC').limit(4).each do |post| %>
   	<h4 class="media-heading">
 	<%= link_to post.title, post %></h4>
 	<%= truncate post.text, length: 190 %> <%= link_to 'read more', post %><br />

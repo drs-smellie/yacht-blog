@@ -64,9 +64,9 @@ $em-base: 16px !default;
 // $default-float: left;
 
 // $body-bg: #fff;
-// $body-font-color: #222;
+$body-font-color: #333;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-$body-font-weight: light;
+$body-font-weight: normal;
 // $body-font-style: normal;
 
 // Font-smoothing
@@ -175,7 +175,7 @@ $column-gutter: em-calc(60);
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #333;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -866,7 +866,7 @@ $header-font-weight: normal;
 
 // $pagination-li-float: $default-float;
 // $pagination-li-height: em-calc(24);
-// $pagination-li-font-color: #222;
+$pagination-li-font-color: #333;
 // $pagination-li-font-size: em-calc(14);
 // $pagination-li-margin: em-calc(5);
 
@@ -1192,7 +1192,7 @@ $header-font-weight: normal;
 
 // $table-head-bg: #f5f5f5;
 // $table-head-font-size: em-calc(14);
-// $table-head-font-color: #222;
+$table-head-font-color: #333;
 // $table-head-font-weight: bold;
 // $table-head-padding: em-calc(8 10 10);
 
@@ -1200,7 +1200,7 @@ $header-font-weight: normal;
 
 // $table-row-padding: em-calc(9 10);
 // $table-row-font-size: em-calc(14);
-// $table-row-font-color: #222;
+$table-row-font-color: #333;
 // $table-line-height: em-calc(18);
 
 // These are for controlling the display and margin of tables

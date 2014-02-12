@@ -1,8 +1,4 @@
 <h1>All posts</h1>
-<% if can? :create, Post %>
-  <%= link_to "Admin: Create new post", new_post_path %>
-<% end %>
-
 <div class="media-body" >
   <% @posts.order('created_at DESC').each do |post| %>
   	<h4 class="media-heading">
@@ -18,4 +14,4 @@
 </div>
 
 <br />
-<%= link_to 'Home', root_path %>
+<%= link_to '<< Home', root_path %>

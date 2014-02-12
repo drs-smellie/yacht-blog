@@ -1,9 +1,8 @@
-<h1>Yacht & Aviation Daily</h1>
-<% if can? :create, @post %>
-	<%= link_to "Admin: Create new post", new_post_path %>
-<% end %> 
-<h3>Latest posts:</h3>
-<div class="media-body" >
+<div class="large-12 colums">
+  <p><img src="http://placehold.it/1000x400&text=[Yacht/Aviation]" /></p>
+  </div>
+	<h3>Latest posts:</h3>
+	<div class="media-body" >
   <% @posts.order('created_at DESC').limit(4).each do |post| %>
   	<h4 class="media-heading">
 	<%= link_to post.title, post %></h4>
@@ -18,6 +17,6 @@
 	</small>
 	<p>
   <% end %>
-</div> 
+</div>
 <br />
 <br />

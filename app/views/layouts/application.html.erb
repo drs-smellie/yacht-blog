@@ -33,8 +33,6 @@
           <li class="divider"></li>
           <li><%= link_to "All Posts", posts_path %></li>
           <li class="divider"></li>
-          <li><%= link_to "About this blog", posts_path %></li>
-          <li class="divider"></li>
           <% if current_user %>
           <li><%= link_to (current_user.username || current_user.email), posts_path %></li>
           <li class="divider"></li>
@@ -47,14 +45,39 @@
         </ul>
       </div>
     </nav>
-    <%= render 'layouts/messages' %>
+  
     <div class="row">
-      <div class="large-9 columns"><%= yield %></div>
-      <div class="large-3 columns"></div>
-        <h3 class="subheader">About this blog</h3>
-        The Yacht & Aviation Daily is brought to you by the following sponsor: Moët & Chandon Champagne
+      <div class="large-9 columns">
+      <%= yield %></div>
+
+      <!-- Sidebar -->
+      <aside class="large-3 columns">
+        <% if can? :create, @post %>
+        <p>
+        <%= link_to "Admin: Create new post", new_post_path %>
+        <% end %>
+        <p>
+        <div class="panel">
+        <h3>About this blog</h3>
+        <br />
+        The Yacht & Aviation Daily is brought to you by the following sponsor: Moët & Chandon Champagne.</div>
+
+      </aside>
     </div>
     <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= javascript_include_tag "application" %>
+     <!-- Footer -->
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+      <hr />
+      <div class="row">
+        <div class="large-6 columns">
+          <p>© Copyright Mellie.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   </body>
 </html>

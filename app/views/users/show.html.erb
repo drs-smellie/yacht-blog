@@ -1,12 +1,13 @@
 <h2>Hi <%= current_user.username %>, this is your page</h2>
   <div class="media-body">
     <% if current_user.avatar? %>
+    Your avatar:<br />
       <%= image_tag current_user.avatar.url, class: 'pull-left' %>
     <% end %>
     <br />
     <br />
     <% if can? :edit, @user %>
-    <%= link_to '> Account Settings', edit_user_path(current_user) %>
+    <%= link_to 'Account Settings', edit_user_path(current_user) %>
     <% end %>
     <br />
     <br />

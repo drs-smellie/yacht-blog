@@ -1,32 +1,26 @@
-<div class="row">
- <div class="span12">
-   <div class="media">
-     <% if @user.avatar? %>
-       <%= image_tag @user.avatar.url, class: 'pull-left' %>
-     <% end %>
-     <div class="media-body">
-       <h2 class="media-heading"><%= @user.username %></h2>
-       <small>
-         <%= pluralize(@user.posts.count, 'post') %>,
-         <%= pluralize(@user.comments.count, 'comment') %>
-       </small>
-     </div>
-   </div>
- </div>
-</div>
-
-<br/>
-
-<div class="row">
- <div class="tabbable tabs-left">
-   <ul class="nav nav-tabs">
-     <li class="active"><a href="#posts" data-toggle="tab">Posts</a></li>
-     <li><a href="#comments" data-toggle="tab">Comments</a></li>
-   </ul>
-
-     <div class="tab-pane" id="comments">
-       <%= render @user.comments %>
-     </div>
-   </div>
- </div>
-</div>
+<h2>Hi <%= current_user.username %>, this is your page</h2>
+  <div class="media-body">
+    <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar.url, class: 'pull-left' %>
+    <% end %>
+    <br />
+    <br />
+    <% if can? :edit, @user %>
+    <%= link_to '> Account Settings', edit_user_path(current_user) %>
+    <% end %>
+    <br />
+    <br />
+  </div>
+  <br />
+  <h4>You made <%= pluralize(current_user.comments.count, 'comment') %> on this blog:</h4><br />
+    <% current_user.comments.order('created_at DESC').each do |comment| %>
+    <%= comment.user.username %> said: "<%= comment.body %>" <%= time_ago_in_words(comment.created_at) %> ago on <%= link_to comment.post.title, comment.post %>.
+    <small>
+      <br />
+        <% if can? :destroy, comment %>
+        <%= link_to 'Delete comment', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
+        <% end %>
+      </small>
+    <br />
+    <br />
+  <% end %>

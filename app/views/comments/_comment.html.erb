@@ -1,7 +1,9 @@
-<%= comment.user.username %> says: "<%= comment.body %>"
-
+<%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
+<%= comment.user.username %> said: "<%= comment.body %>" <%= time_ago_in_words(comment.created_at) %> ago.
 <small>
 <br />
-<%= link_to 'Delete comment', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% if can? :destroy, comment %>
+	<%= link_to 'Delete comment', [comment.post, comment], method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% end %>
 </small>
 </p>

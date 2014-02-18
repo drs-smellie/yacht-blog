@@ -1,5 +1,5 @@
 <h2><%= @post.title %></h2>
-<small>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %></small><br />
+<small><%= image_tag (@post.user.avatar.tiny.url) if @post.user.avatar? %>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %></small><br />
 <p>
 <p>
 <%= markdown @post.text %>

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
 
 	before_create :set_member
+	mount_uploader :avatar, AvatarUploader
 
 	has_secure_password
 	validates_uniqueness_of :email, :username

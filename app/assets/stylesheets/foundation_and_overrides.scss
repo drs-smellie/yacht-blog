@@ -64,7 +64,7 @@ $em-base: 16px !default;
 // $default-float: left;
 
 // $body-bg: #fff;
-$body-font-color: #333;
+$body-font-color: #666;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $body-font-weight: normal;
 // $body-font-style: normal;
@@ -79,9 +79,9 @@ $body-font-weight: normal;
 
 // Colors
 
-// $primary-color: #2ba6cb;
+$primary-color: #5BCCB0;
 // $secondary-color: #e9e9e9;
-// $alert-color: #c60f13;
+$alert-color: #5BCCB0;
 // $success-color: #5da423;
 
 // Make sure border radius matches unless we want it different.
@@ -150,7 +150,7 @@ $body-font-weight: normal;
 //
 
 // $row-width: em-calc(1000);
-$column-gutter: em-calc(60);
+// $column-gutter: em-calc(60);
 // $total-columns: 12;
 
 //
@@ -175,7 +175,7 @@ $column-gutter: em-calc(60);
 // $header-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 $header-font-weight: normal;
 // $header-font-style: normal;
-$header-font-color: #333;
+$header-font-color: #666;
 // $header-line-height: 1.4;
 // $header-top-margin: .2em;
 // $header-bottom-margin: .5em;
@@ -912,7 +912,7 @@ $pagination-li-font-color: #333;
 
 // We use these to set default font colors
 
-// $panel-font-color: #333;
+$panel-font-color: #666;
 // $panel-font-color-alt: #fff;
 
 // $panel-header-adjust: true;
@@ -1255,7 +1255,7 @@ $table-row-font-color: #333;
 
 // Background color for the top bar
 
-$topbar-bg-color: #333333;
+$topbar-bg-color: #5BCCB0;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
@@ -1269,12 +1269,12 @@ $topbar-bg-color: #333333;
 
 // Controlling the styles for the title in the top bar
 
-$topbar-title-weight: normal;
+$topbar-title-weight: bold;
 // $topbar-title-font-size: em-calc(17);
 
 // Style the top bar dropdown elements
 
-// $topbar-dropdown-bg: #222;
+$topbar-dropdown-bg: #5BCCB0;
 // $topbar-dropdown-link-color: #fff;
 // $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
 // $topbar-dropdown-toggle-size: 5px;
@@ -1288,8 +1288,8 @@ $topbar-title-weight: normal;
 // $topbar-link-color-active: #fff;
 $topbar-link-weight: normal;
 // $topbar-link-font-size: em-calc(13);
-$topbar-link-hover-lightness: -30%; // Darken by 15%
-// $topbar-link-bg-hover: darken($topbar-bg-color, 3%);
+$topbar-link-hover-lightness: -20%; // Darken by 15%
+$topbar-link-bg-hover: lighten(#5BCCB0, 20%);
 // $topbar-link-bg-active: darken($topbar-bg-color, 3%);
 
 // $topbar-dropdown-label-color: #555;
@@ -1326,3 +1326,4 @@ $topbar-menu-icon-color-toggled: #ffffff;
 // $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 @import 'foundation';
+@import "hero-unit";

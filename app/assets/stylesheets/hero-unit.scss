@@ -1,0 +1,19 @@
+#hero-unit {
+  background-image:url("topbalk.jpg");
+  width: 100%;
+  min-height: 250px;
+  
+  h3 {
+    color: white;
+    font-size: rem-calc(27);
+    text-align: right;
+    text-shadow: 2px 2px #444444;
+  }
+
+
+  .container {
+    margin-top: 190px;
+    margin-right: 20px;
+  }
+
+}

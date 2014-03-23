@@ -1,7 +1,4 @@
-<div class="large-12 colums">
-  <p><img src="http://placehold.it/1000x400&text=[Yacht/Aviation]" /></p>
-  </div>
-	<h3>Latest posts:</h3>
+<h3>Latest posts:</h3>
 	<div class="media-body" >
     <% @posts.order('created_at DESC').limit(4).each do |post| %>
   	<h4 class="media-heading">

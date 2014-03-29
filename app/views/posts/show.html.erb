@@ -1,8 +1,9 @@
 <h2><%= @post.title %></h2>
 <small><%= image_tag (@post.user.avatar.tiny.url) if @post.user.avatar? %>Posted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.username %></small><br />
-<p>
-<p>
-<%= markdown @post.text %>
+<p></p>
+  <div id="post-style">
+	<%= image_tag(@post.image_url) if @post.image? %><%= markdown @post.text %>
+  </div>
 <p>
 <h4>There are currently <%= @post.comments.count %> comments</h4>
 <%= render @post.comments %>

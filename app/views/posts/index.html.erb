@@ -12,6 +12,9 @@
 	<%= link_to 'Delete', post_path(post), method: :delete, data: { confirm: 'Are you sure?' } %><br />
 	<% end %>
 	</small>
+	<div id="post-style">
+		<%= image_tag(post.image.thumb.url) if post.image? %>
+	</div>
 	<%= truncate post.text, length: 450 %> <%= link_to 'read more...', post %><br />
 	<small>
 	<%= post.comments.count %> Comments

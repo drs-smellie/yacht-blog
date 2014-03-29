@@ -1,29 +1,36 @@
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@post.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
+<div id="form-style">
+  <%= form_for @post do |f| %>
+    <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited
+        this post from being saved:</h2>
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
     <% end %>
-    </ul>
-  </div>
-  <% end %>
 
-  <div class="row collapse">
-    <div class="small-1 columns">
-       <%= f.label :title, class: "right inline" %>
+    <div class="row collapse">
+      <div class="large-3 columns">
+        <%= f.label :title %></div>
+      <div class="large-9 columns"><%= f.text_field :title %></div>
+    </div>
+    <div class="row collapse">
+      <div class="large-3 columns">
+        <%= f.label :text %></div>
+      <div class="large-9 columns"><%= f.text_area :text %></div>
+    </div>
+    <div class="row collapse">
+      <div class="large-3 columns">
+        <%= image_tag(f.object.image.thumb.url) if f.object.image? %>
+        <%= f.label :image %>
       </div>
-       <div class="small-11 columns"><%= f.text_field :title %></div>
-  </div>
-  <div class="row collapse">
-      <div class="small-1 columns">
-        <%= f.label :text, class: "right inline" %>
+      <div class="large-9 columns">
+        <%= f.file_field :image %>
+        <%= f.submit class: "button" %>
       </div>
-        <div class="small-11 columns"><%= f.text_area :text %></div>
-      </div>
-  <div class="row collapse">
-        <div class="small-11 small-offset-1 columns"><%= f.submit class: "button" %></div>
+    </div>
   </div>
 <% end %>

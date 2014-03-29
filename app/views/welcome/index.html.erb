@@ -3,8 +3,12 @@
     <% @posts.order('created_at DESC').limit(4).each do |post| %>
   	<h4 class="media-heading">
 	<%= link_to post.title, post %></h4>
-	<%= truncate post.text, length: 190 %> <%= link_to 'read more', post %><br />
+	<div id="post-style">
+		<%= image_tag(post.image.thumb.url) if post.image? %>
+	</div>
+	<%= truncate post.text, length: 250 %> <%= link_to 'read more', post %><br />
 	<small>
+	<br/>
 	Posted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %>
 	<% if can? :edit, @post %>
 	<%= link_to 'Edit', edit_post_path(post) %><% end %> |

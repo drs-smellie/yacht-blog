@@ -5,4 +5,6 @@ class Post < ActiveRecord::Base
 	validates :text, length: { minimum: 10 }, presence: true
 	validates :user, presence: true
 
+	mount_uploader :image, ImageUploader
+
 end
